@@ -9,6 +9,9 @@ connection = pymysql.connect(
 
 cursor = connection.cursor()
 
+cursor.execute("CREATE DATABASE IF NOT EXISTS Bank")
+print("database created successfully")
+
 cursor.execute("CREATE TABLE IF NOT EXISTS Account_info(account_no INT PRIMARY KEY,name VARCHAR(30),balance INT DEFAULT 0)")
 print("table created successfully")
 connection.commit()
